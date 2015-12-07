@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Ternakku</string>
+    <string name="text_wait">Tunggu...</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="nav_item_home">Ternak</string>
+    <string name="nav_item_friends">Kandang</string>
+    <string name="nav_item_notifications">Profile</string>
+
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home </item>
+        <item>@string/nav_item_friends</item>
+        <item>@string/nav_item_notifications</item>
+    </string-array>
+
+    <string name="JT1">Sapi</string>
+    <string name="JT2">Kambing</string>
+    <string name="status">Status</string>
+
+    <string-array name="JTlist">
+        <item>Kambing</item>
+        <item>Sapi</item>
+    </string-array>
+    <string name="text_camera">Ambil Menggunakan Camera</string>
+    <string name="text_galerry">Ambil Dari Gallery</string>
+
+    <string name="title_messages">Profil</string>
+    <string name="title_friends">Kandang</string>
+    <string name="title_home">Ternak</string>
+    <string name="title_activity_gagagagagal">gagagagagal</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>

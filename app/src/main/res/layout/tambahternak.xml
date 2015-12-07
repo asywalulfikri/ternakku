@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <ImageView
+            android:id="@+id/fototernak"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+            android:layout_weight="6.24"
+            android:background="@drawable/fg"
+            android:contentDescription="TODO" />
+
+        <Spinner
+            android:id="@+id/id_jenis_ternak"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:entries="@array/JTlist"
+            android:prompt="@string/JT1" >
+        </Spinner>
+
+        <EditText
+            android:id="@+id/id_nama_ternak"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:background="@drawable/edittext"
+            android:hint="Nama / kode hewan" >
+
+            <requestFocus />
+        </EditText>
+
+        <TableRow
+            android:id="@+id/gabungyuuk"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioGroup
+                android:id="@+id/jekelternak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/idjantan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="Jantan" />
+
+                <RadioButton
+                    android:id="@+id/idbetina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Betina" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/id_berat"
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:ems="10"
+                android:layout_marginLeft="20dp"
+                android:hint="Berat"
+                android:background="@drawable/edittext"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/idkg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kg"
+                android:layout_marginLeft="20dp"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/gabungyuuklagi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/tgllahir"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:editable="false"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:hint="Tanggal lahir"
+                android:background="@drawable/edittext"
+                android:inputType="date" />
+
+            <ImageView
+                android:id="@+id/tanggalbutton"
+                android:layout_width="40px"
+                android:layout_height="40px"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:contentDescription="selectdate"
+                android:cropToPadding="true"
+                android:editable="false"
+                android:inputType="date"
+                android:src="@drawable/ic_datepicker" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/indk"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/indukjantan"
+                android:layout_width="145dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="1dp"
+                android:hint="Induk Jantan"
+                android:background="@drawable/edittext"
+                android:paddingRight="10dp" />
+
+            <EditText
+                android:id="@+id/indukbetina"
+                android:layout_width="145dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/edittext"
+                android:hint="Induk Betina"
+                android:paddingRight="10dp" />
+        </TableRow>
+
+        <EditText
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Kandang"
+            android:background="@drawable/edittext"
+            android:paddingRight="10dp" />
+
+        <Button
+            android:id="@+id/btn_simpan"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#8BC34A"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="SIMPAN"
+            android:textColor="@color/white"
+            android:textSize="30px" />
+    </LinearLayout>
+
+</LinearLayout>
