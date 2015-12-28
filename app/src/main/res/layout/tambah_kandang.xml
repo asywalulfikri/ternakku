@@ -1,5 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <ImageView
+            android:id="@+id/fototernak"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+            android:layout_weight="6.24"
+            android:background="@drawable/fg"
+            android:contentDescription="TODO" />
+
+        <EditText
+            android:id="@+id/id_nama_kandang"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:background="@drawable/edittext"
+            android:hint="Nama Kandang" >
+
+            <requestFocus />
+        </EditText>
+
+
+
+        <TableRow
+            android:id="@+id/gabungyuuklagi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/lokasi"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:editable="false"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:hint="Lokasi"
+                android:background="@drawable/edittext"/>
+        </TableRow>
+
+
+
+
+        <Button
+            android:id="@+id/btn_simpan"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#8BC34A"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="120dp"
+            android:text="SIMPAN"
+            android:textColor="@color/white"
+            android:textSize="30px" />
+    </LinearLayout>
 
 </LinearLayout>

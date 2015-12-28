@@ -61,4 +61,27 @@
         <item name="android:ellipsize">end</item>
     </style>
 
+        <style name="TextCommon">
+            <item name="android:textSize">12dp</item>
+        </style>
+
+
+    <style name="TextCommon.Medium">
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+
+    </style>
+    <style name="TextCommon.Small">
+        <item name="android:textSize">10dp</item>
+    </style>
+
+
+<style name="TextCommon.Big">
+<item name="android:textSize">16dp</item>
+</style>
+
+
 </resources>

@@ -26,8 +26,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".SplashScreen" />
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.TambahTernak" android:label="Tambah ternak"/>
+        <activity android:name=".ui.Updat_Foto_Ternak" android:label="Update Foto Ternak"/>
+        <activity android:name=".ui.Tambah_Kandang" android:label="Tambah Kandang"/>
+        <activity android:name=".ui.Detail_Ternak" android:label="Detail Ternak"/>
 
     </application>
 

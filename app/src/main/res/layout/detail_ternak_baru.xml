@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#003300" >
+
+        <com.example.toshiba.ternakku.ui.widget.Rounded
+            android:id="@+id/fotoAyah"
+            android:layout_width="120px"
+            android:layout_height="120px"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/ternakkulogo" />
+
+        <com.example.toshiba.ternakku.ui.widget.Rounded
+            android:id="@+id/fototernak"
+            android:layout_width="170px"
+            android:layout_height="170px"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ternakkulogo" />
+
+        <com.example.toshiba.ternakku.ui.widget.Rounded
+            android:id="@+id/fotoIbu"
+            android:layout_width="120px"
+            android:layout_height="120px"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ternakkulogo" />
+
+
+        </TableRow>
+    </LinearLayout>
+</LinearLayout>

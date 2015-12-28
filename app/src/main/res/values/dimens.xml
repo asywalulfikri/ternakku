@@ -8,7 +8,7 @@
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
-
+    <dimen name="activity_half_margin">4dp</dimen>
 
 
     <item name="menuFromDegrees" format="float" type="dimen">180.0</item>

@@ -8,12 +8,12 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
+        android:paddingTop="20dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
 
-        <ImageView android:src="@drawable/rumput"
+        <ImageView android:src="@drawable/ternakku_logo"
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:layout_marginTop="5dp"
@@ -23,13 +23,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="0dp">
 
         <!--  Name Label -->
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="23dp"
             android:gravity="center"
             android:layout_marginBottom="1dp">
 
@@ -39,7 +39,7 @@
                 android:layout_height="40dp"
                 android:textSize="15dp"
                 android:drawableLeft="@drawable/user"
-                android:inputType="textCapWords"
+                android:inputType="number"
                 android:hint="Nama pengguna"/>
 
         </android.support.design.widget.TextInputLayout>
@@ -99,29 +99,11 @@
                 android:id="@+id/btnLogin"
 
                 android:background="@drawable/btn_login_shape"
-                android:onClick="loginVolley"
+                android:onClick="loginToVillages"
                 android:textColor="@color/white"
                 android:padding="12dp"
                 android:text="MASUK"
                 android:layout_centerHorizontal="true" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
-
-
-            <TextView android:id="@+id/btndaftarlogin"
-                android:layout_width="400dp"
-                android:layout_marginTop="30dp"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="Belum punya akun ? Klik disini"
-                android:gravity="center"
-                android:textSize="16dip"/>
-
 
         </RelativeLayout>
 

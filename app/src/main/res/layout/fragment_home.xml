@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             swipe:swipeFrontView="@+id/front"
             swipe:swipeBackView="@+id/back"
+            android:background="#8BC34A"
             swipe:swipeDrawableChecked="@drawable/choice_selected"
             swipe:swipeDrawableUnchecked="@drawable/choice_unselected"
             swipe:swipeCloseAllItemsWhenMoveList="true"

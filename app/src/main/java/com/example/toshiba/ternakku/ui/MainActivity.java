@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.toshiba.ternakku.R;
 import com.example.toshiba.ternakku.ui.fragment.FragmentDrawer;
-import com.example.toshiba.ternakku.ui.fragment.FriendsFragment;
+import com.example.toshiba.ternakku.ui.fragment.KandangFragment;
 import com.example.toshiba.ternakku.ui.fragment.HomeFragment;
 import com.example.toshiba.ternakku.ui.fragment.MessagesFragment;
 
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 title = getString(R.string.title_home);
                 break;
             case 1:
-                fragment = new FriendsFragment();
+                fragment = new KandangFragment();
                 title = getString(R.string.title_friends);
                 break;
             case 2:

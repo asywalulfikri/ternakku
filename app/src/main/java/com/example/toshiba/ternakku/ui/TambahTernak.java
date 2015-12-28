@@ -17,6 +17,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -41,6 +42,7 @@ import java.util.Locale;
 public class TambahTernak  extends BaseActivity {
     EditText namahewan, berat, tanggallahir, indukjantan, indukbetina, kandang;
     ImageView fotoernak;
+    Button SImpan;
     private static final int PICK_FROM_CAMERA = 1;
     private static final int CROP_FROM_CAMERA = 2;
     private static final int PICK_FROM_FILE = 3;

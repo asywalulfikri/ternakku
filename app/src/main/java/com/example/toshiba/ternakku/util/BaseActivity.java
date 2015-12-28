@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Build;
@@ -19,15 +20,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.toshiba.ternakku.R;
 import com.example.toshiba.ternakku.model.User;
 import com.example.toshiba.ternakku.oauth.OauthAccessToken;
 import com.example.toshiba.ternakku.oauth.OauthConsumer;
 import com.example.toshiba.ternakku.oauth.OauthToken;
 
+import java.util.Locale;
 
-public class BaseActivity extends AppCompatActivity {
+
+public class BaseActivity  extends AppCompatActivity {
 	protected SQLiteDatabase mSqLite;
 	protected SharedPreferences mSharedPref;
 
@@ -66,9 +68,9 @@ public class BaseActivity extends AppCompatActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case android.R.id.home:
-			onBackPressed();
-			break;
+			case android.R.id.home:
+				onBackPressed();
+				break;
 		}
 
 		return super.onOptionsItemSelected(item);
@@ -81,15 +83,43 @@ public class BaseActivity extends AppCompatActivity {
 
 	/*************************************************************
 	 * This function for setup Language default by locale
-	 * 
+	 *
 	 * ***********************************************************
 	 */
+	public void setupLanguage() {
+		Locale locale = new Locale(getDefaultLanguage());
 
+		Locale.setDefault(locale);
 
+		Configuration config = new Configuration();
+		config.locale = locale;
+
+		getBaseContext().getResources().updateConfiguration(config,
+				getBaseContext().getResources().getDisplayMetrics());
+	}
+
+	// This setup language
+	public String getDefaultLanguage() {
+		return mSharedPref.getString(Cons.USER_LANGUAGE, Cons.LANG_ID);
+	}
+
+	// This for save default Language
+	public void saveDefaultLanguage(String lang) {
+		Editor editor = mSharedPref.edit();
+
+		editor.putString(Cons.USER_LANGUAGE, lang);
+		editor.commit();
+	}
+
+	/******************************************************
+	 * End function for language
+	 *
+	 * ****************************************************
+	 */
 
 	/******************************************************
 	 * This function for Toast
-	 * 
+	 *
 	 * ****************************************************
 	 */
 	@SuppressLint("InflateParams")
@@ -112,25 +142,25 @@ public class BaseActivity extends AppCompatActivity {
 	public void showToast(String text) {
 		showToast(text, true);
 	}
-	
+
 	public void ShowToastNew(String message) {
 		Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
 	}
 
 	/************************************************************
 	 * Till here for Toast
-	 * 
+	 *
 	 * **********************************************************
 	 */
 
 	/***********************************************************
 	 * This for setting and show dialog
-	 * 
+	 *
 	 * *********************************************************
 	 */
 	@SuppressLint("InflateParams")
 	public void showInfoAndNewIntent(String message, final Intent intent,
-			final int reqCode) {
+									 final int reqCode) {
 		LayoutInflater inflater = getLayoutInflater();
 		View view = inflater.inflate(R.layout.dialog_info, null);
 
@@ -171,7 +201,7 @@ public class BaseActivity extends AppCompatActivity {
 		messageTv.setText(message);
 
 		Builder builder = new Builder(this);
-		
+
 		if (!title.equals(""))
 			builder.setTitle(title);
 
@@ -190,10 +220,10 @@ public class BaseActivity extends AppCompatActivity {
 
 		builder.create().show();
 	}
-	
+
 	@SuppressLint("InflateParams")
 	public void showDialogEditProfile(String title, String message,
-			final boolean back) {
+									  final boolean back) {
 		LayoutInflater inflater = LayoutInflater.from(this);
 		View view = inflater.inflate(R.layout.dialog_info, null);
 
@@ -205,7 +235,7 @@ public class BaseActivity extends AppCompatActivity {
 
 		if (!title.equals(""))
 			builder.setTitle(title);
-		
+
 		builder.setCancelable(false);
 		builder.setInverseBackgroundForced(back);
 		builder.setView(view).setPositiveButton("OK",
@@ -221,11 +251,11 @@ public class BaseActivity extends AppCompatActivity {
 
 		builder.create().show();
 	}
-	
+
 	private void launchRingDialog() {
 		final ProgressDialog progressDialog= ProgressDialog.show(getActivity(), getString(R.string.text_wait), "Loading...", true);
 		progressDialog.setCancelable(true);
-		
+
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -239,7 +269,7 @@ public class BaseActivity extends AppCompatActivity {
 			}
 		}).start();
 	}
-	
+
 	@SuppressLint("InflateParams")
 	public void showDialogExit(String message) {
 		LayoutInflater inflater = LayoutInflater.from(this);
@@ -256,14 +286,14 @@ public class BaseActivity extends AppCompatActivity {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						dialog.dismiss();
-						
+
 						clearUser();
 
 						getActivity().finish();
 						System.exit(0);
 					}
 				});
-		
+
 		builder.setView(view).setNegativeButton("Tidak",
 				new DialogInterface.OnClickListener() {
 					@Override
@@ -279,7 +309,7 @@ public class BaseActivity extends AppCompatActivity {
 //		startActivity(new Intent(getActivity(), EditProfileActivity.class));
 //		finish();
 //	}
-	
+
 	public void showInfoGoEditProfile(String message, boolean back) {
 		showDialogEditProfile("", message, back);
 	}
@@ -302,7 +332,7 @@ public class BaseActivity extends AppCompatActivity {
 
 	/***********************************************************
 	 * Till here for setting dialog
-	 * 
+	 *
 	 * *********************************************************
 	 */
 
@@ -314,7 +344,7 @@ public class BaseActivity extends AppCompatActivity {
 						new DialogInterface.OnClickListener() {
 							@Override
 							public void onClick(DialogInterface dialog,
-									int which) {
+												int which) {
 								showToast("You have been logged out.");
 
 								clearUser();
@@ -326,7 +356,7 @@ public class BaseActivity extends AppCompatActivity {
 						new DialogInterface.OnClickListener() {
 							@Override
 							public void onClick(DialogInterface dialog,
-									int which) {
+												int which) {
 								finish();
 							}
 						});
@@ -336,7 +366,7 @@ public class BaseActivity extends AppCompatActivity {
 
 	/*******************************************************************
 	 * This all about Oauth and SharedPreferences User
-	 * 
+	 *
 	 * *****************************************************************
 	 */
 
@@ -509,31 +539,31 @@ public class BaseActivity extends AppCompatActivity {
 
 	/*******************************************************************
 	 * Till here for about Oauth and SharedPreferences User
-	 * 
+	 *
 	 * *****************************************************************
 	 */
-	
+
 	public SQLiteDatabase getDatabase() {
 		return mSqLite;
 	}
-	
+
 	public SharedPreferences getSharedPreferences() {
 		return mSharedPref;
 	}
-	
+
 	public int getDeviceType() {
 		return (Util.isHoneycombTablet(this)) ? 3 : 2;
 	}
-	
+
 	public String getOS() {
 		return Build.VERSION.RELEASE;
 	}
-	
+
 	public String getLatestUpdate() {
-		
+
 		return mSharedPref.getString(Cons.LASTUPD_KEY, "2014-01-29 00:00:00");
 	}
-	
+
 	public BaseActivity getActivity() {
 		return this;
 	}
@@ -543,13 +573,13 @@ public class BaseActivity extends AppCompatActivity {
 
 		openDatabase();
 	}
-	
+
 	public void logout() {
 		Editor editor = mSharedPref.edit();
-    	
+
 		//editor.putBoolean(Cons.PM_KEEP_LOGIN, 	false);
-    
-    	editor.commit();    	
+
+		editor.commit();
 	}
 
 	// This for open Koneksi to Database

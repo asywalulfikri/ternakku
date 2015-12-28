@@ -36,4 +36,20 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="text_phone_pass_required">Lengkapi username dan password</string>
+    <string name="text_welcome">selamat datang </string>
+    <string name="text_login_failed">Login gagal</string>
+    <string name="akun_not_registered">akun belum terdaftar</string>
+    <string name="akun_incorrect_password">password salah </string>
+    <string name="akun_not_allowed">gagal masuk</string>
+    <string name="text_sending">mengirim</string>
+    <string name="text_post_question_success">Ternak berhasil ditambah</string>
+    <string name="no_connection_for_post">tidak ada koneksi</string>
+    <string name="text_input_gagal">input gagal </string>
+
+    <string-array name="Statuslist">
+        <item>Ternak</item>
+        <item>Jual</item>
+        <item >Mati</item>
+    </string-array>
 </resources>

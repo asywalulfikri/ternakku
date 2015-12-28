@@ -18,10 +18,11 @@ import android.view.ViewGroup;
 
 import com.example.toshiba.ternakku.R;
 import com.example.toshiba.ternakku.swipelistview.BaseSwipeListViewListener;
-import com.example.toshiba.ternakku.swipelistview.ItemAdapter;
 import com.example.toshiba.ternakku.swipelistview.ItemRow;
 import com.example.toshiba.ternakku.swipelistview.SwipeListView;
+import com.example.toshiba.ternakku.ui.Detail_Ternak;
 import com.example.toshiba.ternakku.ui.TambahTernak;
+import com.example.toshiba.ternakku.ui.adapter.Adapter_Ternak_List;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ public class HomeFragment extends Fragment {
 
     FloatingActionButton fabBtn;
     SwipeListView swipelistview;
-    ItemAdapter adapter;
+    Adapter_Ternak_List adapter;
     List<ItemRow> itemData;
 
     public HomeFragment() {
@@ -64,7 +65,7 @@ public class HomeFragment extends Fragment {
 
         swipelistview = (SwipeListView) root.findViewById(R.id.example_swipe_lv_list);
         itemData=new ArrayList<ItemRow>();
-        adapter=new ItemAdapter(getActivity().getApplicationContext(),R.layout.custom_row,itemData);
+        adapter=new Adapter_Ternak_List(getActivity().getApplicationContext(),R.layout.costum_row_ternak,itemData);
 
 
 
@@ -99,7 +100,7 @@ public class HomeFragment extends Fragment {
             public void onClickFrontView(int position) {
                 Log.d("swipe", String.format("onClickFrontView %d", position));
 
-
+                pindahPage();
                 swipelistview.openAnimate(position); //when you touch front view it will open
 
 
@@ -124,15 +125,15 @@ public class HomeFragment extends Fragment {
         swipelistview.setSwipeMode(SwipeListView.SWIPE_MODE_BOTH); // there are five swiping modes
         swipelistview.setSwipeActionLeft(SwipeListView.SWIPE_ACTION_DISMISS); //there are four swipe actions
         swipelistview.setSwipeActionRight(SwipeListView.SWIPE_ACTION_REVEAL);
-        swipelistview.setOffsetLeft(convertDpToPixel(0f)); // left side offset
-        swipelistview.setOffsetRight(convertDpToPixel(0f)); // right side offset
+        swipelistview.setOffsetLeft(convertDpToPixel(5f)); // left side offset
+        swipelistview.setOffsetRight(convertDpToPixel(5f)); // right side offset
         swipelistview.setAnimationTime(500); // Animation time
         swipelistview.setSwipeOpenOnLongPress(true); // enable or disable SwipeOpenOnLongPress
 
         swipelistview.setAdapter(adapter);
 
         for (int i = 0; i < 10; i++) {
-            itemData.add(new ItemRow("Swipe Item" + i, getResources().getDrawable(R.drawable.ic_launcher)));
+            itemData.add(new ItemRow("Swipe Item" + i, getResources().getDrawable(R.drawable.noimage)));
 
         }
 
@@ -140,6 +141,37 @@ public class HomeFragment extends Fragment {
 
 
         return root;
+    }
+
+
+    private void pindahPage() {
+
+        Intent intenn = new Intent(getActivity(), Detail_Ternak.class);
+
+        startActivity(intenn);
+
+    }
+    private void updateList() {
+
+       adapter=new Adapter_Ternak_List(getActivity(),R.layout.costum_row_ternak,itemData);
+       adapter.goCm(new Adapter_Ternak_List.goCamera() {
+            @Override
+            public void OnGetIdCamera(View view, int position) {
+               // getIdCamera(view, position);
+
+            }
+        });
+
+        swipelistview.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+    }
+
+    private void getIdCamera(View view, final int pos) {
+
+       /* Log.e("sssss", String.valueOf(pos));
+        Intent update = new Intent(getActivity(), Updat_Foto_Ternak.class);
+        startActivity(update);
+        getIdCamera(view, pos);*/
     }
 
 

@@ -1,11 +1,15 @@
 package com.example.toshiba.ternakku.util;
 
+import android.annotation.SuppressLint;
+
 /**
  * Created by Toshiba on 12/3/2015.
  */
-public class Cons  {
+@SuppressLint("SdCardPath")
+public class Cons {
 
-    public static final String TAG = "TERNAKKU";
+    public static final String TAG = "FUPEI";
+
 
     public static final String ACCOUNTS_URL = "https://accounts.8villages.com";
     public static final String REQUEST_TOKEN_URL = "https://accounts.8villages.com/oauth/request-token";
@@ -29,30 +33,30 @@ public class Cons  {
     public static final String ADS_INERSTITIAL_PUBID = "3224682d7c07d2226d780e30acae5850";
     public static final String ADS_BANNER_PUBID = "6de061114706a37c0e430d8fb57416e1";
     public static final String ADS_REQUEST_URL = "http://ad.8villages.com/md.request.php";
+    public static final String LINK_WEB_SHARE = "http://8villages.com/full/petani/index.php/conversation/id/";
+
+
 
     public static final String DBNAME = "lisa.db";
-    public static final String DBPATH = "/data/data/com.eightvillages.gembala.android/";
+    public static final String DBPATH = "/data/data/com.example.toshiba.ternakku/";
     public static final String APP_DIR = "/.lisa";
     public static final String IMAGE_DIR = APP_DIR + "/thumbs";
 
-    public static final String PACKAGE_PREFIX = "com.eightvillages";
+    public static final String PACKAGE_PREFIX = "com.example";
 
-    public static final int DB_VERSION = 6;
+    public static final int DB_VERSION = 3;
 
     // private preferences key name
     public static final String PRIVATE_PREF = "lisa_pref";
     public static final String DBVER_KEY = "dbversion";
     public static final String APPVER_KEY = "appversion";
     public static final String LASTUPD_KEY = "lastupdate";
-
     public static final String OAUTH_REQ_TOKEN = "oauth_req_token";
     public static final String OAUTH_REQ_TOKEN_SECRET = "oauth_req_token_secret";
     public static final String OAUTH_REQ_VERIFIER = "oauth_req_verifier";
-
     public static final String OAUTH_TOKEN = "oauth_token";
     public static final String OAUTH_TOKEN_SECRET = "oauth_token_secret";
     public static final String OAUTH_VERIFIER = "oauth_verifier";
-
     public static final String USER_NAME = "user_name";
     public static final String USER_IDENTIFIER = "user_identifier";
     public static final String USER_ID = "user_id";
@@ -60,11 +64,11 @@ public class Cons  {
     public static final String USER_GENDER = "user_gender";
     public static final String USER_FIELD_SIZE = "user_fieldsize";
     public static final String USER_BIRTH_DATE = "user_birthdate";
-    public static final String USER_TERNAK = "user_ternak";
     public static final String USER_CROP = "user_crop";
     public static final String USER_HOBBY = "user_hobby";
     public static final String USER_LOCATION = "user_location";
     public static final String USER_STATE = "user_state";
+    public static final String USER_SUBDISTRICT = "user_subdistrict";
     public static final String USER_ACCOUNTID = "user_accountid";
     public static final String USER_COMMUNITYID = "user_communityid";
     public static final String USER_CUSTOMERID = "user_customerid";
@@ -76,14 +80,12 @@ public class Cons  {
     public static final String USER_ARTICLES = "user_articles";
     public static final String USER_RESPONSES = "user_responses";
     public static final String USER_AVATAR = "user_avatar";
-    public static final String USER_SUBDISTRICT = "user_subdistrict";
-    public static final String USER_CHANNEL_GROUP = "user_channel_group";
     public static final String USER_LANGUAGE = "user_language";
+    public static final String USER_CHANNEL_GROUP = "user_channel_group";
     public static final String USER_HASBROWSER = "user_browser";
     public static final String USER_HAS_STORE = "user_store";
     public static final String USER_STORE_ID = "user_store_id";
-
-    public static final String LINK_WEB_SHARE = "http://8villages.com/full/gembala/conversation/id/";
+    public static final String USER_STORE_OWNER = "user_store_owner";
 
     public static final String KEYWORD_REG = "regkeyword";
     public static final String KEYWORD_RESET = "resetkeyword";
@@ -94,6 +96,8 @@ public class Cons  {
 
     public static final int DEFAULT_PAGING_LENGTH = 10;
 
+    public static final String CONVERSATION_ID = "conversation-id";
+
     public static final String SEPARATOR = ";";
 
     public static final String TYPE_QUESTIONS = "questions";
@@ -101,6 +105,12 @@ public class Cons  {
     public static final String TYPE_SURVEYS = "surveys";
     public static final String TYPE_BROADCASTS = "broadcasts";
     public static final String TYPE_RESPONSES = "responses";
+    public static final String TYPE_STORE = "stores";
+    public static final String TYPE_VIDEOS = "videos";
+    public static final String TYPE_EVENTS = "events";
+    public static final String VIDEO_ID = "VIDEO_ID";
+    public static final String TYPE_STORE_ITEMS = "store-items";
+    public static final String TYPE_STOREITEMS = "storeItems";
 
     // enable debug
     public static final boolean ENABLE_DEBUG = true;

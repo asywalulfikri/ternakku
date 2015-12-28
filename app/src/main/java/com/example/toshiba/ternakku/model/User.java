@@ -62,16 +62,6 @@ public class User implements Parcelable {
 		communityId = in.readString();
 		customerId = in.readString();
 		avatar = in.readString();
-		channelGroup = in.readString();
-		hasBrowserVersion = in.readString();
-		hasStore = in.readString();
-		storeId = in.readString();
-		storeOwner = in.readString();
-		
-		points = in.readInt();
-		forums = in.readInt();
-		questions = in.readInt();
-		articles = in.readInt();
 		responses = in.readInt();
 
 		accessToken = OauthAccessToken.CREATOR.createFromParcel(in);
@@ -114,21 +104,7 @@ public class User implements Parcelable {
 		out.writeString(state);
 		out.writeString(subdistrict);
 		out.writeString(type);
-		out.writeString(privacy);
-		out.writeString(accountId);
-		out.writeString(communityId);
-		out.writeString(customerId);
-		out.writeString(avatar);
-		out.writeString(channelGroup);
-		out.writeString(hasBrowserVersion);
-		out.writeString(hasStore);
-		out.writeString(storeId);
-		out.writeString(storeOwner);
-		
-		out.writeInt(points);
-		out.writeInt(forums);
-		out.writeInt(questions);
-		out.writeInt(articles);
+
 		out.writeInt(responses);
 		
 		accessToken.writeToParcel(out, flags);

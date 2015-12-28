@@ -121,6 +121,7 @@
     <orderEntry type="library" exported="" name="arcmenulibrary" level="project" />
     <orderEntry type="library" exported="" name="play-services-gcm-7.8.0" level="project" />
     <orderEntry type="library" exported="" name="nineoldandroids-2.4.0" level="project" />
+    <orderEntry type="library" exported="" name="volley" level="project" />
     <orderEntry type="library" exported="" name="play-services-games-7.8.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-wallet-7.8.0" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-22.2.1" level="project" />
@@ -129,12 +130,14 @@
     <orderEntry type="library" exported="" name="play-services-ads-7.8.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-22.2.1" level="project" />
     <orderEntry type="library" exported="" name="play-services-analytics-7.8.0" level="project" />
+    <orderEntry type="library" exported="" name="oauth_2.9.1-1-2.5-rc2-1.2-sources" level="project" />
     <orderEntry type="library" exported="" name="play-services-appindexing-7.8.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-appinvite-7.8.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-safetynet-7.8.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-7.8.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-base-7.8.0" level="project" />
     <orderEntry type="library" exported="" name="signpost-commonshttp4-1.2.1" level="project" />
+    <orderEntry type="library" exported="" name="httpmime-4.3.5" level="project" />
     <orderEntry type="library" exported="" name="play-services-fitness-7.8.0" level="project" />
     <orderEntry type="library" exported="" name="google-play-services_lib" level="project" />
     <orderEntry type="library" exported="" name="org.apache.servicemix.bundles.commons-httpclient-3.1_1" level="project" />
@@ -150,7 +153,9 @@
     <orderEntry type="library" exported="" name="play-services-identity-7.8.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-panorama-7.8.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-plus-7.8.0" level="project" />
+    <orderEntry type="library" exported="" name="signpost-core-1.2.1.2" level="project" />
     <orderEntry type="library" exported="" name="play-services-maps-7.8.0" level="project" />
+    <orderEntry type="library" exported="" name="signpost-commonshttp4-1.2.1.2" level="project" />
     <orderEntry type="library" exported="" name="design-22.2.1" level="project" />
   </component>
 </module>

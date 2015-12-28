@@ -1,10 +1,12 @@
 package com.example.toshiba.ternakku;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -44,7 +46,6 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.util.ArrayList;
-
 public class SplashScreen extends BaseActivity {
 
     private TokenTask mTokenTask;
@@ -90,6 +91,17 @@ public class SplashScreen extends BaseActivity {
         Util.createAppDir();
 
         context = getApplicationContext();
+
+//		if (checkPlayServices()) {
+//			gcm 		= GoogleCloudMessaging.getInstance(this);
+//			regId		= getRegistrationId(context);
+//
+//
+//			registerInBackground();
+//
+//		}else {
+//			Log.i(TAG, "No valid Google Play Services APK found.");
+//		}
 
         initDatabase();
 
@@ -175,7 +187,7 @@ public class SplashScreen extends BaseActivity {
                 os.close();
                 is.close();
 
-                SharedPreferences.Editor editor = mSharedPref.edit();
+                Editor editor = mSharedPref.edit();
 
                 editor.putInt(Cons.DBVER_KEY, Cons.DB_VERSION);
                 editor.commit();
@@ -295,7 +307,7 @@ public class SplashScreen extends BaseActivity {
 
             mProviderDb.update(wrapper.providerList);
 
-            SharedPreferences.Editor editor = mSharedPref.edit();
+            Editor editor = mSharedPref.edit();
 
             editor.putString(Cons.KEYWORD_REG, wrapper.keywordReg);
             editor.putString(Cons.KEYWORD_RESET, wrapper.keywordReset);
@@ -356,7 +368,7 @@ public class SplashScreen extends BaseActivity {
             PackageInfo packageInfo = context.getPackageManager()
                     .getPackageInfo(context.getPackageName(), 0);
             return packageInfo.versionCode;
-        } catch (PackageManager.NameNotFoundException e) {
+        } catch (NameNotFoundException e) {
             // should never happen
             throw new RuntimeException("Could not get package name: " + e);
         }
@@ -366,7 +378,7 @@ public class SplashScreen extends BaseActivity {
         final SharedPreferences prefs = getGCMPreferences(context);
         int appVersion = getAppVersion(context);
         Log.i(TAG, "Saving regId on app version " + appVersion);
-        SharedPreferences.Editor editor = prefs.edit();
+        Editor editor = prefs.edit();
         editor.putString(PROPERTY_REG_ID, regId);
         editor.putInt(PROPERTY_APP_VERSION, appVersion);
         editor.commit();
@@ -445,4 +457,3 @@ public class SplashScreen extends BaseActivity {
 
     }
 }
-
